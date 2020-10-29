@@ -7,10 +7,11 @@ $(document).ready(function() {
         var randomNumbers = getRandomNumbers(1, 50);
 
         if(! randomNumbersArray.includes(randomNumbers)) {
-            randomNumbersArray.push(randomNumbers);
+            (randomNumbersArray.push(randomNumbers));
         }
-        alert(randomNumbersArray);
     }   
+        alert(randomNumbersArray);
+
 
     // countdown 30 sec
     var secondi = 30;
