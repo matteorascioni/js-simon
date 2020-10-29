@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Ref
     var randomNumbersArray = [];
-    var size = 5
+    var size = 5;
 
     while (randomNumbersArray.length < size) {
         var randomNumbers = getRandomNumbers(1, 50);
@@ -12,7 +12,8 @@ $(document).ready(function() {
         alert(randomNumbersArray);
     }   
 
-    
+    // countdown 30 sec
+    var secondi = 30;
 
 }); //  End of Jquery document
 
