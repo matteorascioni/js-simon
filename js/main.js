@@ -12,9 +12,42 @@ $(document).ready(function() {
     }   
         alert(randomNumbersArray);
 
-
     // countdown 30 sec
+    var display = $('.display');
+
     var secondi = 30;
+
+    var interval = setInterval(function() {
+        if(secondi == 0) {
+            display.text(secondi);
+
+        } else {
+            display.text(secondi);
+            secondi--;
+        }
+    }, 1000);
+
+    // Richiesta utente
+    for (var i = 0; i < 5; i++) {
+        var richiestaUtente = parseInt(prompt('Hai 30 sec per inserire i numeri che hai appena visto'));    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }); //  End of Jquery document
 
