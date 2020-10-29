@@ -28,27 +28,13 @@ $(document).ready(function() {
     }, 1000);
 
     // Richiesta utente
+    var numUtente = [];
+    var numInseriti = 5;
+    
     for (var i = 0; i < 5; i++) {
-        var richiestaUtente = parseInt(prompt('Hai 30 sec per inserire i numeri che hai appena visto'));    
+        utente = parseInt(prompt('Hai 30 sec per inserire i numeri che hai appena visto'));    
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 }); //  End of Jquery document
 
 // Funzione generazione numeri random
