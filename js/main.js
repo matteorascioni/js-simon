@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Ref
+    // Array 5 numeri alert
     var randomNumbersArray = [];
     var size = 5;
 
@@ -9,32 +9,45 @@ $(document).ready(function() {
         if(! randomNumbersArray.includes(randomNumbers)) {
             (randomNumbersArray.push(randomNumbers));
         }
-    }   
-        alert(randomNumbersArray);
+    }  
+    alert(randomNumbersArray);
 
-    // countdown 30 sec
-    var display = $('.display');
+    // Countdown 30 sec
+    var secondi = 3000;
 
-    var secondi = 30;
+    setTimeout(function(){
+        var usersNumbers = [];
 
-    var interval = setInterval(function() {
-        if(secondi == 0) {
-            display.text(secondi);
+        while(usersNumbers.length < size) {
+            var newUsersNumber = parseInt(prompt('Inserisci il ' + (usersNumbers.length + 1) + 'numero' ) );
 
-        } else {
-            display.text(secondi);
-            secondi--;
-        }
-    }, 1000);
+            while (isNaN(NewUsersNumber)) {
+                newUsersNumber = parseInt(prompt('Numero invalido, Inserisci il ' + (usersNumbers.length + 1) + 'numero' ) );
+            }
 
-    // Richiesta utente
-    var numUtente = [];
-    var numInseriti = 5;
-    
-    for (var i = 0; i < 5; i++) {
-        utente = parseInt(prompt('Hai 30 sec per inserire i numeri che hai appena visto'));    
-    }
-    
+            // Univocità
+            if(! usersNumbers.includes(newUsersNumber)) {
+                usersNumbers.push(newUsersNumber);
+            } else {
+                alert('numero già inserito');
+            }
+
+            // Collezione di numeri giusti
+            var numeriGiusti = [];
+
+            for (var i = 0; i < usersNumbers.length; i++) {
+                if(randomNumbersArray.includes(usersNumbers[i])) {
+                    numeriGiusti.push(usersNumbers);
+                }
+            }
+
+            // risultati
+            alert('Risultati\n' + 
+                  'Lista proposta\n' + randomNumbersArray +
+                  '\nLista Utente ' + usersNumbers + 
+                  '\nIndovinati' + numeriGiusti.length + ' numeri\n' + numeriGiusti); 
+        }   
+    },secondi);
 }); //  End of Jquery document
 
 // Funzione generazione numeri random
